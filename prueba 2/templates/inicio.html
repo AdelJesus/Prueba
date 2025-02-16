@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio</title>
+    <link rel="stylesheet" href="../static/css/inicio.css">
+    <link rel="icon" href="../static/images/ico.png">
+</head>
+<body>
+    <div class="contenido">
+        <div class="letra">
+            <button class="boton" onclick="toggleMenu()">☰</button>
+            <div id="menu" class="menu">
+                <p><a href="#" onclick="cambiarSeccion('servicios')">Servicios</a></p>
+                <p><a href="#" onclick="cambiarSeccion('calendario')">Calendario</a></p>
+                <p><a href="#" onclick="cambiarSeccion('contactos')">Contactos</a></p>
+                <p><a href="#" onclick="cambiarSeccion('ubicacion')">Ubicación</a></p>
+            </div>
+            <div class="desplaze">
+                <div class="seccion" id="servicios" style="display: none;"><p><strong>Bienvenidos a Servicios</strong></p></div>
+                <div class="seccion" id="calendario" style="display: none;">
+                    <p><strong>Calendario</strong></p>
+                    <div id="calendar-container"></div>
+                    <p><button class="btn-agendar">Agendar cita</button></p>
+                </div>
+                <div class="seccion" id="contactos" style="display: none;"><p><strong>Info</strong></p>
+                    <iframe id="contenido" src="{{ url_for('contactos') }}" width="96%" height="360px"></iframe>
+                </div>
+                <div class="seccion" id="ubicacion" style="display: none;"><p><strong>Bienvenidos a Ubicación</strong></p></div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+</body>
+</html>
